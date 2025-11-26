@@ -1,0 +1,24 @@
+// Last updated: 11/26/2025, 6:39:31 PM
+
+class Solution {
+
+public:
+    
+    bool hasCycle(ListNode *head) {
+        if(head==nullptr) return false;
+        ListNode *slow = head;
+        ListNode *fast = head;
+
+        while(fast !=nullptr && fast->next!=nullptr ){
+            slow = slow->next;
+            fast = fast->next->next;
+
+
+        if(slow==fast){
+            return true;
+          }
+        }
+      
+        return false;
+    }
+};
